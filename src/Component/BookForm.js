@@ -1,7 +1,9 @@
 import React, {useRef} from 'react';
-import './BookForm.css'
+import './BookForm.css';
+import useStyles from './BookFormStyles';
 
 const BookForm = () => {
+  const classes = useStyles();
   const enteredBookName = useRef();
   const enteredBookDetail = useRef();
   const enteredAuthorName = useRef();
@@ -33,9 +35,9 @@ const BookForm = () => {
     localStorage.setItem("bookData", JSON.stringify(bookData));
   }
   return (
-    <div className='bookForm'>
+    <div className={classes.bookForm}>
       <div className='labelInput'>
-      <label className='lbl'>Book Name :</label>
+      <label className={classes.lbl}>Book Name :</label>
       <input type='text' className='InputField' ref={enteredBookName}/>
       </div>
 
